@@ -1,5 +1,6 @@
-import 'package:ar/features/splash/presentation/views/splah_view.dart';
+import 'package:ar/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(ArApp());
@@ -10,9 +11,14 @@ class ArApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashView(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: OnBoardingView(),
+      ),
     );
   }
 }
